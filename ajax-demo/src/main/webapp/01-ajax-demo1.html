@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+<script>
+    var xhttp;
+    if(window.XMLHttpRequest){
+        xhttp=new XMLHttpRequest();
+    }else{
+        xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.open("Get","http://localhost:8080/ajax_ demo_war/ajaxServlet");
+    xhttp.send();
+
+    xhttp.onreadystatechange=function (){
+        if(this.readyState==4&&this.status==200){
+            alert(this.responseText);
+        }
+    }
+</script>
+</body>
+</html>
